@@ -1,13 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
-import axios from "axios";
+import { AppService } from '../service/app.service';
 
-@Controller()
-export class AppController {
+@Controller('/reference')
+export class ReferenceController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): Promise<string> {
+  getReferenceList(): Promise<string> {
     return this.appService.getHello();
   }
 }
